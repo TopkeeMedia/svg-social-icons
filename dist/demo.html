@@ -12,8 +12,10 @@
   const handleOptions = (data)=>{
     const newData = {}
     Object.keys(data).map((key)=>{
+        if(data[key].includes('\n')) return 
+
         const val = data[key].replace(/[\s;]/g,'').split(':')
-        if(val[0]){
+        if(val[0] && !val[0].includes('--tw-')){
             const item = {label:key,className:key,key:val[0],value:val[1]}
             if(newData[val[0]]){
                 newData[val[0]].push(item)
