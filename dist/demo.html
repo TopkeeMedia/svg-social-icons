@@ -1,0 +1,34 @@
+<div>json</div>
+<script>
+   const getOptions = async () => {
+    const res = await fetch(
+      "https://raw.githubusercontent.com/jcha0713/tailwindcss-classes/main/tw.json",
+    );
+    const text = await res?.text();
+    const data = text ? JSON.parse(text) : null;
+    return data || [];
+  };
+
+  const handleOptions = (data)=>{
+    const newData = {}
+    Object.keys(data).map((key)=>{
+        const val = data[key].replace(/[\s;]/g,'').split(':')
+        if(val[0]){
+            const item = {label:key,className:key,key:val[0],value:val[1]}
+            if(newData[val[0]]){
+                newData[val[0]].push(item)
+            }else{
+                newData[val[0]] = [item]
+            }
+        }
+    })
+
+    console.log(newData)
+   
+  }
+
+  getOptions().then((res)=>{
+    console.log(res)
+    handleOptions(res)
+  })
+</script>
