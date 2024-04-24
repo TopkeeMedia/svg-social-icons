@@ -17,11 +17,22 @@
       const val = data[key].replace(/[\s;]/g, '').split(':')
       const isHas = [val[0].includes('--tw-'), key.includes('>')]
       if (val[0] && !isHas.includes(true)) {
+        const reg = /^(-?[\d.]*)(px|%|em|rem|vh|vw)$/;
+        let newVal = val[1];
+        let newUnit = "";
+        if (reg.test(val[1])) {
+          val[1].replace(reg, ($, $1, $2) => {
+            newVal = $1;
+            newUnit = $2;
+          });
+        }
 
-        const item = { label: val[1], className: key, key: val[0], value: val[1] }
+
+        const item = { label: val[1], className: key, key: val[0], value: newVal }
+        if(newUnit) item.unit = newUnit
         if (newData[val[0]]) {
-          const index = newData[val[0]].findIndex((item) => item.value === val[1])
-          if (index === -1) newData[val[0]].push(item)
+          const index = newData[val[0]].findIndex((item) => item.value + (item.unit || '') === val[1])
+          if(index === -1) newData[val[0]].push(item)
         } else {
           newData[val[0]] = [item]
         }
