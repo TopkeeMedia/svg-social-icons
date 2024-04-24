@@ -1,6 +1,6 @@
 <div>json</div>
 <script>
-   const getOptions = async () => {
+  const getOptions = async () => {
     const res = await fetch(
       "https://raw.githubusercontent.com/jcha0713/tailwindcss-classes/main/tw.json",
     );
@@ -9,28 +9,30 @@
     return data || [];
   };
 
-  const handleOptions = (data)=>{
+  const handleOptions = (data) => {
     const newData = {}
-    Object.keys(data).map((key)=>{
-        if(data[key].includes('\n')) return 
+    Object.keys(data).map((key) => {
+      if (data[key].includes('\n')) return
 
-        const val = data[key].replace(/[\s;]/g,'').split(':')
-        const isHas = [val[0].includes('--tw-'),key.includes('>')]
-        if(val[0] && !isHas.includes(true)){
-            const item = {label:val[1],className:key,key:val[0],value:val[1]}
-            if(newData[val[0]]){
-                newData[val[0]].push(item)
-            }else{
-                newData[val[0]] = [item]
-            }
+      const val = data[key].replace(/[\s;]/g, '').split(':')
+      const isHas = [val[0].includes('--tw-'), key.includes('>')]
+      if (val[0] && !isHas.includes(true)) {
+
+        const item = { label: val[1], className: key, key: val[0], value: val[1] }
+        if (newData[val[0]]) {
+          const index = newData[val[0]].findIndex((item) => item.value === val[1])
+          if (index === -1) newData[val[0]].push(item)
+        } else {
+          newData[val[0]] = [item]
         }
+      }
     })
 
     console.log(newData)
-   
+
   }
 
-  getOptions().then((res)=>{
+  getOptions().then((res) => {
     console.log(res)
     handleOptions(res)
   })

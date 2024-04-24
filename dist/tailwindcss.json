@@ -1037,12 +1037,6 @@
             "value": "25%"
         },
         {
-            "label": "50%",
-            "className": "top-2/4",
-            "key": "top",
-            "value": "50%"
-        },
-        {
             "label": "75%",
             "className": "top-3/4",
             "key": "top",
@@ -1295,12 +1289,6 @@
             "className": "right-1/4",
             "key": "right",
             "value": "25%"
-        },
-        {
-            "label": "50%",
-            "className": "right-2/4",
-            "key": "right",
-            "value": "50%"
         },
         {
             "label": "75%",
@@ -1557,12 +1545,6 @@
             "value": "25%"
         },
         {
-            "label": "50%",
-            "className": "bottom-2/4",
-            "key": "bottom",
-            "value": "50%"
-        },
-        {
             "label": "75%",
             "className": "bottom-3/4",
             "key": "bottom",
@@ -1815,12 +1797,6 @@
             "className": "left-1/4",
             "key": "left",
             "value": "25%"
-        },
-        {
-            "label": "50%",
-            "className": "left-2/4",
-            "key": "left",
-            "value": "50%"
         },
         {
             "label": "75%",
@@ -2141,12 +2117,6 @@
             "value": "25%"
         },
         {
-            "label": "50%",
-            "className": "basis-2/4",
-            "key": "flex-basis",
-            "value": "50%"
-        },
-        {
             "label": "75%",
             "className": "basis-3/4",
             "key": "flex-basis",
@@ -2183,24 +2153,6 @@
             "value": "16.666667%"
         },
         {
-            "label": "33.333333%",
-            "className": "basis-2/6",
-            "key": "flex-basis",
-            "value": "33.333333%"
-        },
-        {
-            "label": "50%",
-            "className": "basis-3/6",
-            "key": "flex-basis",
-            "value": "50%"
-        },
-        {
-            "label": "66.666667%",
-            "className": "basis-4/6",
-            "key": "flex-basis",
-            "value": "66.666667%"
-        },
-        {
             "label": "83.333333%",
             "className": "basis-5/6",
             "key": "flex-basis",
@@ -2213,58 +2165,16 @@
             "value": "8.333333%"
         },
         {
-            "label": "16.666667%",
-            "className": "basis-2/12",
-            "key": "flex-basis",
-            "value": "16.666667%"
-        },
-        {
-            "label": "25%",
-            "className": "basis-3/12",
-            "key": "flex-basis",
-            "value": "25%"
-        },
-        {
-            "label": "33.333333%",
-            "className": "basis-4/12",
-            "key": "flex-basis",
-            "value": "33.333333%"
-        },
-        {
             "label": "41.666667%",
             "className": "basis-5/12",
             "key": "flex-basis",
             "value": "41.666667%"
         },
         {
-            "label": "50%",
-            "className": "basis-6/12",
-            "key": "flex-basis",
-            "value": "50%"
-        },
-        {
             "label": "58.333333%",
             "className": "basis-7/12",
             "key": "flex-basis",
             "value": "58.333333%"
-        },
-        {
-            "label": "66.666667%",
-            "className": "basis-8/12",
-            "key": "flex-basis",
-            "value": "66.666667%"
-        },
-        {
-            "label": "75%",
-            "className": "basis-9/12",
-            "key": "flex-basis",
-            "value": "75%"
-        },
-        {
-            "label": "83.333333%",
-            "className": "basis-10/12",
-            "key": "flex-basis",
-            "value": "83.333333%"
         },
         {
             "label": "91.666667%",
@@ -6439,12 +6349,6 @@
             "value": "25%"
         },
         {
-            "label": "50%",
-            "className": "w-2/4",
-            "key": "width",
-            "value": "50%"
-        },
-        {
             "label": "75%",
             "className": "w-3/4",
             "key": "width",
@@ -6481,24 +6385,6 @@
             "value": "16.666667%"
         },
         {
-            "label": "33.333333%",
-            "className": "w-2/6",
-            "key": "width",
-            "value": "33.333333%"
-        },
-        {
-            "label": "50%",
-            "className": "w-3/6",
-            "key": "width",
-            "value": "50%"
-        },
-        {
-            "label": "66.666667%",
-            "className": "w-4/6",
-            "key": "width",
-            "value": "66.666667%"
-        },
-        {
             "label": "83.333333%",
             "className": "w-5/6",
             "key": "width",
@@ -6511,58 +6397,16 @@
             "value": "8.333333%"
         },
         {
-            "label": "16.666667%",
-            "className": "w-2/12",
-            "key": "width",
-            "value": "16.666667%"
-        },
-        {
-            "label": "25%",
-            "className": "w-3/12",
-            "key": "width",
-            "value": "25%"
-        },
-        {
-            "label": "33.333333%",
-            "className": "w-4/12",
-            "key": "width",
-            "value": "33.333333%"
-        },
-        {
             "label": "41.666667%",
             "className": "w-5/12",
             "key": "width",
             "value": "41.666667%"
         },
         {
-            "label": "50%",
-            "className": "w-6/12",
-            "key": "width",
-            "value": "50%"
-        },
-        {
             "label": "58.333333%",
             "className": "w-7/12",
             "key": "width",
             "value": "58.333333%"
-        },
-        {
-            "label": "66.666667%",
-            "className": "w-8/12",
-            "key": "width",
-            "value": "66.666667%"
-        },
-        {
-            "label": "75%",
-            "className": "w-9/12",
-            "key": "width",
-            "value": "75%"
-        },
-        {
-            "label": "83.333333%",
-            "className": "w-10/12",
-            "key": "width",
-            "value": "83.333333%"
         },
         {
             "label": "91.666667%",
@@ -7015,12 +6859,6 @@
             "value": "25%"
         },
         {
-            "label": "50%",
-            "className": "h-2/4",
-            "key": "height",
-            "value": "50%"
-        },
-        {
             "label": "75%",
             "className": "h-3/4",
             "key": "height",
@@ -7055,24 +6893,6 @@
             "className": "h-1/6",
             "key": "height",
             "value": "16.666667%"
-        },
-        {
-            "label": "33.333333%",
-            "className": "h-2/6",
-            "key": "height",
-            "value": "33.333333%"
-        },
-        {
-            "label": "50%",
-            "className": "h-3/6",
-            "key": "height",
-            "value": "50%"
-        },
-        {
-            "label": "66.666667%",
-            "className": "h-4/6",
-            "key": "height",
-            "value": "66.666667%"
         },
         {
             "label": "83.333333%",
@@ -7943,12 +7763,6 @@
             "className": "text-zinc-900",
             "key": "color",
             "value": "rgb(242427)"
-        },
-        {
-            "label": "rgb(250250250)",
-            "className": "text-neutral-50",
-            "key": "color",
-            "value": "rgb(250250250)"
         },
         {
             "label": "rgb(245245245)",
@@ -9321,12 +9135,6 @@
             "className": "decoration-zinc-900",
             "key": "text-decoration-color",
             "value": "#18181b"
-        },
-        {
-            "label": "#fafafa",
-            "className": "decoration-neutral-50",
-            "key": "text-decoration-color",
-            "value": "#fafafa"
         },
         {
             "label": "#f5f5f5",
@@ -11197,12 +11005,6 @@
             "className": "bg-zinc-900",
             "key": "background-color",
             "value": "rgb(242427)"
-        },
-        {
-            "label": "rgb(250250250)",
-            "className": "bg-neutral-50",
-            "key": "background-color",
-            "value": "rgb(250250250)"
         },
         {
             "label": "rgb(245245245)",
@@ -13181,12 +12983,6 @@
             "value": "rgb(242427)"
         },
         {
-            "label": "rgb(250250250)",
-            "className": "border-neutral-50",
-            "key": "border-color",
-            "value": "rgb(250250250)"
-        },
-        {
             "label": "rgb(245245245)",
             "className": "border-neutral-100",
             "key": "border-color",
@@ -14531,12 +14327,6 @@
             "className": "border-t-zinc-900",
             "key": "border-top-color",
             "value": "rgb(242427)"
-        },
-        {
-            "label": "rgb(250250250)",
-            "className": "border-t-neutral-50",
-            "key": "border-top-color",
-            "value": "rgb(250250250)"
         },
         {
             "label": "rgb(245245245)",
@@ -15885,12 +15675,6 @@
             "value": "rgb(242427)"
         },
         {
-            "label": "rgb(250250250)",
-            "className": "border-r-neutral-50",
-            "key": "border-right-color",
-            "value": "rgb(250250250)"
-        },
-        {
             "label": "rgb(245245245)",
             "className": "border-r-neutral-100",
             "key": "border-right-color",
@@ -17237,12 +17021,6 @@
             "value": "rgb(242427)"
         },
         {
-            "label": "rgb(250250250)",
-            "className": "border-b-neutral-50",
-            "key": "border-bottom-color",
-            "value": "rgb(250250250)"
-        },
-        {
             "label": "rgb(245245245)",
             "className": "border-b-neutral-100",
             "key": "border-bottom-color",
@@ -18587,12 +18365,6 @@
             "className": "border-l-zinc-900",
             "key": "border-left-color",
             "value": "rgb(242427)"
-        },
-        {
-            "label": "rgb(250250250)",
-            "className": "border-l-neutral-50",
-            "key": "border-left-color",
-            "value": "rgb(250250250)"
         },
         {
             "label": "rgb(245245245)",
@@ -20009,12 +19781,6 @@
             "className": "outline-zinc-900",
             "key": "outline-color",
             "value": "#18181b"
-        },
-        {
-            "label": "#fafafa",
-            "className": "outline-neutral-50",
-            "key": "outline-color",
-            "value": "#fafafa"
         },
         {
             "label": "#f5f5f5",
@@ -23723,12 +23489,6 @@
             "value": "translateX(25%)"
         },
         {
-            "label": "translateX(50%)",
-            "className": "translate-x-2/4",
-            "key": "transform",
-            "value": "translateX(50%)"
-        },
-        {
             "label": "translateX(75%)",
             "className": "translate-x-3/4",
             "key": "transform",
@@ -23763,12 +23523,6 @@
             "className": "translate-y-1/4",
             "key": "transform",
             "value": "translateY(25%)"
-        },
-        {
-            "label": "translateY(50%)",
-            "className": "translate-y-2/4",
-            "key": "transform",
-            "value": "translateY(50%)"
         },
         {
             "label": "translateY(75%)",
@@ -24121,12 +23875,6 @@
             "className": "accent-zinc-900",
             "key": "accent-color",
             "value": "#18181b"
-        },
-        {
-            "label": "#fafafa",
-            "className": "accent-neutral-50",
-            "key": "accent-color",
-            "value": "#fafafa"
         },
         {
             "label": "#f5f5f5",
@@ -25705,12 +25453,6 @@
             "className": "caret-zinc-900",
             "key": "caret-color",
             "value": "#18181b"
-        },
-        {
-            "label": "#fafafa",
-            "className": "caret-neutral-50",
-            "key": "caret-color",
-            "value": "#fafafa"
         },
         {
             "label": "#f5f5f5",
@@ -29419,12 +29161,6 @@
             "value": "#18181b"
         },
         {
-            "label": "#fafafa",
-            "className": "fill-neutral-50",
-            "key": "fill",
-            "value": "#fafafa"
-        },
-        {
             "label": "#f5f5f5",
             "className": "fill-neutral-100",
             "key": "fill",
@@ -30775,12 +30511,6 @@
             "className": "stroke-zinc-900",
             "key": "stroke",
             "value": "#18181b"
-        },
-        {
-            "label": "#fafafa",
-            "className": "stroke-neutral-50",
-            "key": "stroke",
-            "value": "#fafafa"
         },
         {
             "label": "#f5f5f5",
