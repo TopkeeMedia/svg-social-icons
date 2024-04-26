@@ -1,5 +1,78 @@
 <div>json</div>
 <script>
+  const options = {
+    "font-size":[
+      {"id": "text-xs","label": "0.75rem","label": "0.75rem","className": "text-xs","value": "0.75","unit": "rem"},
+      {"id": "text-sm","label": "0.875rem","className": "text-sm","value": "0.875","unit": "rem"},
+      {"id": "text-base","label": "1rem","className": "text-base","value": "1","unit": "rem"},
+      {"id": "text-lg","label": "1.125rem","className": "text-lg","value": "1.125","unit": "rem"},
+      {"id": "text-xl","label": "1.25rem","className": "text-xl","value": "1.25","unit": "rem"},
+      {"id": "text-2xl","label": "1.5rem","className": "text-2xl","value": "1.5","unit": "rem"},
+      {"id": "text-3xl","label": "1.875rem","className": "text-3xl","value": "1.875","unit": "rem"},
+      {"id": "text-4xl","id": "text-xs","label": "2.25rem","className": "text-4xl","value": "2.25","unit": "rem"},
+      {"id": "text-5xl","label": "3rem","className": "text-5xl","value": "3","unit": "rem"},
+      {"id": "text-6xl","label": "3.75rem","className": "text-6xl","value": "3.75","unit": "rem"},
+      {"id": "text-7xl","label": "4.5rem","className": "text-7xl","value": "4.5","unit": "rem"},
+      {"id": "text-8xl","label": "6rem","className": "text-8xl","value": "6","unit": "rem"},
+      {"id": "text-9xl","label": "8rem","className": "text-9xl","value": "8","unit": "rem"},
+    ],
+    "font-family":[
+    {
+        "id": "Arial, Helvetica, sans-serif",
+        "label": "Arial"
+    },
+    {
+        "id": "Arial Black, Gadget, sans-serif",
+        "label": "Arial Black"
+    },
+    {
+        "id": "Brush Script MT, sans-serif",
+        "label": "Brush Script MT"
+    },
+    {
+        "id": "Comic Sans MS, cursive, sans-serif",
+        "label": "Comic Sans MS"
+    },
+    {
+        "id": "Courier New, Courier, monospace",
+        "label": "Courier New"
+    },
+    {
+        "id": "Georgia, serif",
+        "label": "Georgia"
+    },
+    {
+        "id": "Helvetica, sans-serif",
+        "label": "Helvetica"
+    },
+    {
+        "id": "Impact, Charcoal, sans-serif",
+        "label": "Impact"
+    },
+    {
+        "id": "Lucida Sans Unicode, Lucida Grande, sans-serif",
+        "label": "Lucida Sans Unicode"
+    },
+    {
+        "id": "Tahoma, Geneva, sans-serif",
+        "label": "Tahoma"
+    },
+    {
+        "id": "Times New Roman, Times, serif",
+        "label": "Times New Roman"
+    },
+    {
+        "id": "Trebuchet MS, Helvetica, sans-serif",
+        "label": "Trebuchet MS"
+    },
+    {
+        "id": "Verdana, Geneva, sans-serif",
+        "label": "Verdana"
+    }
+],
+
+
+}
   const getOptions = async () => {
     const res = await fetch(
       "https://raw.githubusercontent.com/jcha0713/tailwindcss-classes/main/tw.json",
@@ -10,7 +83,7 @@
   };
 
   const handleOptions = (data) => {
-    const newData = {}
+    const newData = options
     Object.keys(data).map((key) => {
       if (data[key].includes('\n')) return
 
@@ -28,7 +101,7 @@
         }
 
 
-        const item = { label: val[1], className: key, key: val[0], value: newVal }
+        const item = { id: key, label: val[1], className: key, value: newVal }
         if(newUnit) item.unit = newUnit
         if (newData[val[0]]) {
           const index = newData[val[0]].findIndex((item) => item.value + (item.unit || '') === val[1])
@@ -39,12 +112,12 @@
       }
     })
 
-    console.log(newData)
+    return newData
 
   }
 
   getOptions().then((res) => {
-    console.log(res)
-    handleOptions(res)
+    const data = handleOptions(res)
+    console.log(data)
   })
 </script>
