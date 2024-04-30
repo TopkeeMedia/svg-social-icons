@@ -394,6 +394,8 @@
   const handleOptions = (data) => {
     const newData = options;
     Object.keys(data).map((key) => {
+      if (data[key].includes("\n")) return;
+      
       const val = data[key].replace(/[\s;]/g, "").split(":");
       const isHas = [val[0].includes("--tw-"), key.includes(">")];
       const sectorItem = Object.values(sectors).find((sector) =>
