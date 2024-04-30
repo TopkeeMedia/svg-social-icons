@@ -395,7 +395,7 @@
     const newData = options;
     Object.keys(data).map((key) => {
       if (data[key].includes("\n")) return;
-      
+
       const val = data[key].replace(/[\s;]/g, "").split(":");
       const isHas = [val[0].includes("--tw-"), key.includes(">")];
       const sectorItem = Object.values(sectors).find((sector) =>
@@ -466,7 +466,7 @@
 
   getOptions().then((res) => {
     const data = handleOptions(res);
-    console.log(data);
+    console.log({sectors,properties:data});
   });
 </script>
 
