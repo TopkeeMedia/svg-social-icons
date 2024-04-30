@@ -1,81 +1,390 @@
 <div>json</div>
 <script>
+  const sectors = [
+    {
+      id: "layout",
+      props: [
+        "display",
+        "float",
+        "clear",
+        "position",
+        "top",
+        "right",
+        "bottom",
+        "left",
+        "z-index",
+        "overflow",
+        "overflow-x",
+        "overflow-y",
+        "visibility",
+        "columns",
+        "object-fit",
+        "object-position",
+        "box-sizing",
+      ],
+    },
+    {
+      id: "flexbox",
+      props: [
+        "flex-basis",
+        "flex-direction",
+        "flex-wrap",
+        "flex",
+        "flex-grow",
+        "flex-shrink",
+        "align-items",
+        "align-content",
+        "align-self",
+        "justify-items",
+        "justify-content",
+        "justify-self",
+      ],
+    },
+    {
+      id: "grid",
+      props: [
+        "grid-template-rows",
+        "grid-row",
+        "grid-row-start",
+        "grid-row-end",
+        "grid-template-columns",
+        "grid-column",
+        "grid-column-start",
+        "grid-column-end",
+        "grid-auto-flow",
+        "grid-auto-rows",
+        "grid-auto-columns",
+        "gap",
+        "row-gap",
+        "column-gap",
+        "place-items",
+        "place-content",
+        "place-self",
+      ],
+    },
+    {
+      id: "sizing",
+      props: [
+        "width",
+        "height",
+        "max-width",
+        "max-height",
+        "min-width",
+        "min-height",
+      ],
+    },
+    {
+      id: "spacing",
+      props: [
+        "margin",
+        "margin-top",
+        "margin-right",
+        "margin-bottom",
+        "margin-left",
+        "padding",
+        "padding-top",
+        "padding-right",
+        "padding-bottom",
+        "padding-left",
+      ],
+    },
+    {
+      id: "typography",
+      props: [
+        "font-family",
+        "font-size",
+        "font-style",
+        "font-weight",
+        "color",
+        "text-align",
+        "text-decoration-line",
+        "text-decoration-color",
+        "text-decoration-style",
+        "text-decoration-thickness",
+        "text-underline-offset",
+        "text-transform",
+        "text-overflow",
+        "text-wrap",
+        "text-indent",
+        "vertical-align",
+        "white-space",
+        "word-break",
+        "overflow-wrap",
+        "content",
+        "letter-spacing",
+        "line-clamp",
+        "line-height",
+        "list-style-position",
+        "list-style-type",
+      ],
+    },
+    {
+      id: "borders",
+      props: [
+        "border-width",
+        "border-color",
+        "border-style",
+        "border-top-width",
+        "border-top-color",
+        "border-top-style",
+        "border-right-width",
+        "border-right-color",
+        "border-right-style",
+        "border-bottom-width",
+        "border-bottom-color",
+        "border-bottom-style",
+        "border-left-width",
+        "border-left-color",
+        "border-left-style",
+        "border-radius",
+        "border-top-left-radius",
+        "border-top-right-radius",
+        "border-bottom-left-radius",
+        "border-bottom-right-radius",
+        "outline-width",
+        "outline-color",
+        "outline-style",
+        "outline-offset",
+      ],
+    },
+    {
+      id: "background",
+      props: [
+        "background-color",
+        "background-position",
+        "background-repeat",
+        "background-size",
+        "background-origin",
+        "background-clip",
+        "background-image",
+        "background-attachment",
+      ],
+    },
+    {
+      id: "tables",
+      props: [
+        "border-collapse",
+        "border-spacing",
+        "table-layout",
+        "caption-side",
+      ],
+    },
+    { id: "filter", props: ["filter", "backdrop-filter"] },
+    { id: "svg", props: ["fill", "stroke", "stroke-width"] },
+    {
+      id: "effects",
+      props: ["box-shadow", "opacity", "accent-color", "cursor"],
+    },
+    {
+      id: "animation",
+      props: [
+        "animation",
+        "transition-property",
+        "transition-duration",
+        "transition-timing-function",
+        "transition-delay",
+      ],
+    },
+    { id: "transforms", props: ["transform", "transform-origin"] },
+  ];
   const options = {
-    "font-size":[
-      {"id": "text-xs","label": "0.75rem","label": "0.75rem","className": "text-xs","value": "0.75","unit": "rem"},
-      {"id": "text-sm","label": "0.875rem","className": "text-sm","value": "0.875","unit": "rem"},
-      {"id": "text-base","label": "1rem","className": "text-base","value": "1","unit": "rem"},
-      {"id": "text-lg","label": "1.125rem","className": "text-lg","value": "1.125","unit": "rem"},
-      {"id": "text-xl","label": "1.25rem","className": "text-xl","value": "1.25","unit": "rem"},
-      {"id": "text-2xl","label": "1.5rem","className": "text-2xl","value": "1.5","unit": "rem"},
-      {"id": "text-3xl","label": "1.875rem","className": "text-3xl","value": "1.875","unit": "rem"},
-      {"id": "text-4xl","id": "text-xs","label": "2.25rem","className": "text-4xl","value": "2.25","unit": "rem"},
-      {"id": "text-5xl","label": "3rem","className": "text-5xl","value": "3","unit": "rem"},
-      {"id": "text-6xl","label": "3.75rem","className": "text-6xl","value": "3.75","unit": "rem"},
-      {"id": "text-7xl","label": "4.5rem","className": "text-7xl","value": "4.5","unit": "rem"},
-      {"id": "text-8xl","label": "6rem","className": "text-8xl","value": "6","unit": "rem"},
-      {"id": "text-9xl","label": "8rem","className": "text-9xl","value": "8","unit": "rem"},
-    ],
-    "font-family":[
-    {
-        "id": "Arial, Helvetica, sans-serif",
-        "label": "Arial"
+    "font-size": {
+      options: [
+        {
+          id: "text-xs",
+          label: "0.75rem",
+          label: "0.75rem",
+          className: "text-xs",
+          value: "0.75",
+          unit: "rem",
+        },
+        {
+          id: "text-sm",
+          label: "0.875rem",
+          className: "text-sm",
+          value: "0.875",
+          unit: "rem",
+        },
+        {
+          id: "text-base",
+          label: "1rem",
+          className: "text-base",
+          value: "1",
+          unit: "rem",
+        },
+        {
+          id: "text-lg",
+          label: "1.125rem",
+          className: "text-lg",
+          value: "1.125",
+          unit: "rem",
+        },
+        {
+          id: "text-xl",
+          label: "1.25rem",
+          className: "text-xl",
+          value: "1.25",
+          unit: "rem",
+        },
+        {
+          id: "text-2xl",
+          label: "1.5rem",
+          className: "text-2xl",
+          value: "1.5",
+          unit: "rem",
+        },
+        {
+          id: "text-3xl",
+          label: "1.875rem",
+          className: "text-3xl",
+          value: "1.875",
+          unit: "rem",
+        },
+        {
+          id: "text-4xl",
+          id: "text-xs",
+          label: "2.25rem",
+          className: "text-4xl",
+          value: "2.25",
+          unit: "rem",
+        },
+        {
+          id: "text-5xl",
+          label: "3rem",
+          className: "text-5xl",
+          value: "3",
+          unit: "rem",
+        },
+        {
+          id: "text-6xl",
+          label: "3.75rem",
+          className: "text-6xl",
+          value: "3.75",
+          unit: "rem",
+        },
+        {
+          id: "text-7xl",
+          label: "4.5rem",
+          className: "text-7xl",
+          value: "4.5",
+          unit: "rem",
+        },
+        {
+          id: "text-8xl",
+          label: "6rem",
+          className: "text-8xl",
+          value: "6",
+          unit: "rem",
+        },
+        {
+          id: "text-9xl",
+          label: "8rem",
+          className: "text-9xl",
+          value: "8",
+          unit: "rem",
+        },
+      ],
+      sector: "typography",
     },
-    {
-        "id": "Arial Black, Gadget, sans-serif",
-        "label": "Arial Black"
+    "font-family": {
+      options: [
+        {
+          id: "Arial, Helvetica, sans-serif",
+          label: "Arial",
+        },
+        {
+          id: "Arial Black, Gadget, sans-serif",
+          label: "Arial Black",
+        },
+        {
+          id: "Brush Script MT, sans-serif",
+          label: "Brush Script MT",
+        },
+        {
+          id: "Comic Sans MS, cursive, sans-serif",
+          label: "Comic Sans MS",
+        },
+        {
+          id: "Courier New, Courier, monospace",
+          label: "Courier New",
+        },
+        {
+          id: "Georgia, serif",
+          label: "Georgia",
+        },
+        {
+          id: "Helvetica, sans-serif",
+          label: "Helvetica",
+        },
+        {
+          id: "Impact, Charcoal, sans-serif",
+          label: "Impact",
+        },
+        {
+          id: "Lucida Sans Unicode, Lucida Grande, sans-serif",
+          label: "Lucida Sans Unicode",
+        },
+        {
+          id: "Tahoma, Geneva, sans-serif",
+          label: "Tahoma",
+        },
+        {
+          id: "Times New Roman, Times, serif",
+          label: "Times New Roman",
+        },
+        {
+          id: "Trebuchet MS, Helvetica, sans-serif",
+          label: "Trebuchet MS",
+        },
+        {
+          id: "Verdana, Geneva, sans-serif",
+          label: "Verdana",
+        },
+      ],
+      sector: "typography",
     },
-    {
-        "id": "Brush Script MT, sans-serif",
-        "label": "Brush Script MT"
-    },
-    {
-        "id": "Comic Sans MS, cursive, sans-serif",
-        "label": "Comic Sans MS"
-    },
-    {
-        "id": "Courier New, Courier, monospace",
-        "label": "Courier New"
-    },
-    {
-        "id": "Georgia, serif",
-        "label": "Georgia"
-    },
-    {
-        "id": "Helvetica, sans-serif",
-        "label": "Helvetica"
-    },
-    {
-        "id": "Impact, Charcoal, sans-serif",
-        "label": "Impact"
-    },
-    {
-        "id": "Lucida Sans Unicode, Lucida Grande, sans-serif",
-        "label": "Lucida Sans Unicode"
-    },
-    {
-        "id": "Tahoma, Geneva, sans-serif",
-        "label": "Tahoma"
-    },
-    {
-        "id": "Times New Roman, Times, serif",
-        "label": "Times New Roman"
-    },
-    {
-        "id": "Trebuchet MS, Helvetica, sans-serif",
-        "label": "Trebuchet MS"
-    },
-    {
-        "id": "Verdana, Geneva, sans-serif",
-        "label": "Verdana"
+    "line-clamp":{
+      options:[{
+          id: "line-clamp-none",
+          label: "none",
+          className:'line-clamp-none'
+        },
+        {
+          id: "line-clamp-1",
+          label: "1",
+          className:'line-clamp-1'
+        },
+        {
+          id: "line-clamp-2",
+          label: "2",
+          className:'line-clamp-2'
+        },
+        {
+          id: "line-clamp-3",
+          label: "3",
+          className:'line-clamp-3'
+        },
+        {
+          id: "line-clamp-4",
+          label: "4",
+          className:'line-clamp-4'
+        },
+        {
+          id: "line-clamp-5",
+          label: "4",
+          className:'line-clamp-4'
+        },
+        {
+          id: "line-clamp-6",
+          label: "6",
+          className:'line-clamp-6'
+        }],
+        sector:'typography'
     }
-],
-
-
-}
+  };
   const getOptions = async () => {
     const res = await fetch(
-      "https://raw.githubusercontent.com/jcha0713/tailwindcss-classes/main/tw.json",
+      "https://raw.githubusercontent.com/jcha0713/tailwindcss-classes/main/tw.json"
     );
     const text = await res?.text();
     const data = text ? JSON.parse(text) : null;
@@ -83,16 +392,19 @@
   };
 
   const handleOptions = (data) => {
-    const newData = options
+    const newData = options;
     Object.keys(data).map((key) => {
-      if (data[key].includes('\n')) return
-
-      const val = data[key].replace(/[\s;]/g, '').split(':')
-      const isHas = [val[0].includes('--tw-'), key.includes('>')]
-      if (val[0] && !isHas.includes(true)) {
+      const val = data[key].replace(/[\s;]/g, "").split(":");
+      const isHas = [val[0].includes("--tw-"), key.includes(">")];
+      const sectorItem = Object.values(sectors).find((sector) =>
+        sector.props?.includes(val[0])
+      );
+      
+      if(sectorItem && !isHas.includes(true)){
         const reg = /^(-?[\d.]*)(px|%|em|rem|vh|vw)$/;
         let newVal = val[1];
         let newUnit = "";
+ 
         if (reg.test(val[1])) {
           val[1].replace(reg, ($, $1, $2) => {
             newVal = $1;
@@ -100,24 +412,59 @@
           });
         }
 
-
-        const item = { id: key, label: val[1], className: key, value: newVal }
-        if(newUnit) item.unit = newUnit
+        const item = { id: key, label: val[1], className: key, value: newVal };
+        if (newUnit) item.unit = newUnit;
         if (newData[val[0]]) {
-          const index = newData[val[0]].findIndex((item) => item.value + (item.unit || '') === val[1])
-          if(index === -1) newData[val[0]].push(item)
+          const index = newData[val[0]].options.findIndex(
+            (item) => item.value + (item.unit || "") === val[1]
+          );
+          if (index === -1) newData[val[0]].options.push(item);
         } else {
-          newData[val[0]] = [item]
+          newData[val[0]] = { options: [item],sector:sectorItem?.id || null }
         }
       }
     })
 
-    return newData
+    // Object.keys(data).map((key) => {
+    //   if (data[key].includes("\n")) return;
 
-  }
+    //   const val = data[key].replace(/[\s;]/g, "").split(":");
+    //   const isHas = [val[0].includes("--tw-"), key.includes(">")];
+    //   if (val[0] && !isHas.includes(true)) {
+    //     const reg = /^(-?[\d.]*)(px|%|em|rem|vh|vw)$/;
+    //     let newVal = val[1];
+    //     let newUnit = "";
+    //     if (reg.test(val[1])) {
+    //       val[1].replace(reg, ($, $1, $2) => {
+    //         newVal = $1;
+    //         newUnit = $2;
+    //       });
+    //     }
+
+    //     const item = { id: key, label: val[1], className: key, value: newVal };
+    //     if (newUnit) item.unit = newUnit;
+    //     if (newData[val[0]]) {
+    //       const index = newData[val[0]].options.findIndex(
+    //         (item) => item.value + (item.unit || "") === val[1]
+    //       );
+    //       if (index === -1) newData[val[0]].options.push(item);
+    //     } else {
+    //       const sectorItem = Object.values(sectors).find((sector) =>
+    //         sector.props?.includes(val[0])
+    //       );
+    //       const data = { options: [item] };
+    //       if (sectorItem) data.sector = sectorItem.id;
+    //       newData[val[0]] = data;
+    //     }
+    //   }
+    // });
+
+    return newData;
+  };
 
   getOptions().then((res) => {
-    const data = handleOptions(res)
-    console.log(data)
-  })
+    const data = handleOptions(res);
+    console.log(data);
+  });
 </script>
+
